@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		{{>header}}
+		<form action="/weather" method="get">
+			<input type="search" name="address" id="address" placeholder="Addresse">
+			<input type="submit" value="Submit">
+		</form>
+		<div class="forecast">
+			<p id="message"></p>
+			<p id="location"></p>
+			<img id="forecast-logo" src="" alt="weatherIcon" style="display:none">
+			<p id="forecast"></p>
+		</div>
+		{{>footer}}
+		<script src="/js/app.js"></script>
+	</body>
+</html>
