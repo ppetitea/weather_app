@@ -56,12 +56,7 @@ app.get('/weather', (req, res) => {
 app.get('*', (req, res) => {
 	if (!req.query.address) {
 		return res.render('index', {
-			title: 'Weather App',
-			message: '',
-			address: '',
-			temperature: '',
-			weatherIcon: 'meteo-logo.png',
-			summary: ''
+			title: 'Weather App'
 		})
 	}
 	mapBox.geocode(req.query.address, (error, {latitude, longitude, place}) => {
@@ -73,12 +68,7 @@ app.get('*', (req, res) => {
 				return console.log('Error', error)
 			}
 			res.render('index', {
-				title: 'Weather App',
-				message: '',
-				address: place,
-				temperature: temperature + '°C',
-				weatherIcon: 'meteo-logo.png',
-				summary: summary
+				title: 'Weather App'
 			})
 		})
 	})
